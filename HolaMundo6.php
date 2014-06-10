@@ -3,26 +3,47 @@
  * Pablo José de Jesús Carmona Ventura.
  * Comentario de verias lineas
  */
-// Leccion 2: Un mensaje a travez de una veriable
-$message = 'Hola Pablo\n'; // Comentario en linea.
+// Estructuras de control.
+$password = 'Letmein';
+if($password === 'letmein')
+{
+    echo 'Password is correct';
+}
+else
+{
+    echo 'Password is incorrect';
+}
+echo "\n";
+$color = 'red';
+switch ($color) {
+    case 'green':
+    echo 'Green';
+        break;
+    case 'blue':
+    echo 'Blue';
+        break;
 
-# El punto y coma se puede omitir al final de un bloque.
-echo $message;
-// Leccion 3: Definir una constante.
-define('PUBLISHER', 'SPRINGER');
-
-echo PUBLISHER;
-// Leccion 4: Escribir un número flotante.
-$pi = 0.031416E2;
-echo $pi;
-// Leccion 5: Mediante comillas dobles se reemplazan los valores.
-// Ahora es posible incluir secuencias de escape estilo C
-echo "\n$message\n";
-echo "PUBLISHER\n";
-echo $pi;
-// Leccion 8: Arreglos. Para versión 5.4 y posteriores.
- $people = ['Luis','Noé',1234, false, [2]];
-// Para versiones 5.2 y anteriores:
-// $people = array('Luis','Noe',1234,false);
-print_r($people);
+    default:
+        echo $color;
+        break;
+} // end switch
+$product = ['name' => 'Ajax', 'price' => 230, 'availale' => true];
+foreach($product as $field => $value){
+    echo "\n$field: $value";
+}
+function test()
+{
+    $parameter1 = 'foo';
+    $parameter2 = 'bar';
+    if($parameter1 === 'baz')
+    {
+        die('Terminate script');
+    }
+    return "\n$parameter1 $parameter2";
+}
+// return 'Luis';
+echo test();
+$configuration = require 'configuracion.php';
+print_r($configuration);
+exit(0);
 ?>
